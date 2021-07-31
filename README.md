@@ -1,18 +1,18 @@
 # oracle-error-handler
 
-Generic Error Handler for Oracle
+Simple Error Handler for Oracle
 
 ```sql
-error_handler.log_db_error(i_err_function   VARCHAR2 -- the function name
-                          ,i_err_message    VARCHAR2 -- user defined message DEFAULT ORA-message
-                          ,i_abort          BOOLEAN  -- abort application DEFAULT false  
+error_handler.log_db_error(i_err_function varchar2 /* the function name */
+                          ,i_err_message varchar2  /* user defined message DEFAULT ORA-message */
+                          ,i_abort boolean         /* abort application DEFAULT false */
                           );
 ```
 
 ## examples
 
 ```sql
--- basic call, the code will handle the rest
+/* basic call, the code will handle the rest */
 begin
   dbms_output.put_line(1/0);
 exception
@@ -24,7 +24,7 @@ end;
 ```
 
 ```sql
--- user defined message
+/* user defined message */
 begin
   dbms_output.put_line(1/0);
 exception
@@ -36,7 +36,7 @@ end;
 ```
 
 ```sql
--- user defined message and abort the code
+/* user defined message and abort the code */
 begin
   dbms_output.put_line(1/0);
 exception
